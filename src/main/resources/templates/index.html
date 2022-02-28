@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulář</title>
+
+    <!-- Extern links for bootstrap & other -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div id="contact" class="container text-center" style="max-width: 800px;">
+        <div class="section-title text-center">
+            <h3>Kontaktujte mě</h3>
+        </div>
+
+        <div class="col-8 mx-auto">
+            <form action="/index" method="post" id="contactForm">
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Jméno" required>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea name="msg" id="message" class="form-control" rows="4" placeholder="Zpráva"></textarea>
+                    <p class="help-block text-danger"></p>
+                </div>
+                <div id="success"></div>
+                <button type="submit" class="btn btn-custom btn-lg">Odeslat zprávu</button>
+            </form>
+        </div>
+
+        <br><br>
+
+        <div class="response col-8 mx-auto" th:if="${name}" >
+            <p th:text="'Zdravím ' + ${name} + ' s emailem ' + ${email} +'. ' "></p>
+            <p th:text="${available}"></p>
+            <br>
+            <p th:text="'Dotazováno: ' + ${counter} +' krát'"></p>
+        </div>
+
+    </div>
+</body>
+</html>
