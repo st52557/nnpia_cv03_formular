@@ -14,8 +14,8 @@ Form on /index returns different value based on first letter of send message. It
 
 <code>
 {<br>
-    "name": "Riland Grace",<br>
-    "email": "grace@mary.cz",<br>
+    "name": "Ryland Grace",<br>
+    "email": "grace@mary.com",<br>
     "msg": "This is a message."<br>
 }
 </code>
